@@ -1,1 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration = com.elta.iron.bank.eltaironbankstarter.IronBankStarterConf
+org.springframework.context.ApplicationContextInitializer = com.elta.iron.bank.eltaironbankstarter.ProfileSentinelApplicationContextInitializer
+org.springframework.boot.env.EnvironmentPostProcessor = com.elta.iron.bank.eltaironbankstarter.ProfileAutodetectEnvironmentPostProcessor

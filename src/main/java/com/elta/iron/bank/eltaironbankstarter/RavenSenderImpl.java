@@ -1,5 +1,6 @@
 package com.elta.iron.bank.eltaironbankstarter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -7,10 +8,11 @@ import org.springframework.stereotype.Component;
  */
 public class RavenSenderImpl implements RavenSender {
 
-    private String destination = "dorn";
+    @Autowired
+    private IronBankPropertiesHolder propertiesHolder;
 
     @Override
-    public void sendRaven(NotEnoughMoneyException ex) {
-        System.out.println("raven was sent to "+destination+" "+ex.getMessage());
+    public void sendRaven(String exMsg) {
+        System.out.println("raven was sent to "+propertiesHolder.getDestination()+" "+exMsg);
     }
 }
